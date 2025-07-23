@@ -1,0 +1,31 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ doc.title }}</h1>
+
+
+<p>
+	Starts on {{frappe.format_date(doc.start_date)}}
+</p>
+
+<table>
+	<thead>
+		<td>Talk</td>
+		<td>Start Time</td>
+		<td>End time</td>
+	</thead>
+
+	<tbody>
+		{% for talk in doc.schedule %}
+			<tr>
+				{% set title = frappe.db.get_value("Talk", talk.talk, "title") %}
+				<td>{{ title }}</td>
+				<td>{{ talk.start_time }}</td>
+				<td>{{ talk.end_time }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<a class="btn btn-primary mt-4" href="/registration-form/new?conference={{doc.name}}">Register</a>
+{% endblock %}
