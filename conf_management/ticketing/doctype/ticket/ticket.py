@@ -13,7 +13,8 @@ class Ticket(Document):
 	def generate_qr_code(self):
 		import io
 
-		img = qrcode.make(self.name)
+		payload = {"id": self.name, "name": self.attendee_name}
+		img = qrcode.make(frappe.as_json(payload))
 		output = io.BytesIO()
 		img.save(output, format="PNG")
 		hex_data = output.getvalue()
@@ -30,8 +31,6 @@ class Ticket(Document):
 		self.save()
 
 
-@frappe.whitelist()
-def check_in(ticket_id: str):
-	t = frappe.get_doc("Ticket", ticket_id)
-	t.append("check_ins", {"checked_in_at": frappe.utils.now_datetime()})
-	t.save()
+@frappe.whitelist(allow_guest=True)
+def check_in(doctype, doc_name):
+	return frappe.get_doc(doctype, doc_name)

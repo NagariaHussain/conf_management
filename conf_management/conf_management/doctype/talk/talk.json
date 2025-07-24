@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2025-07-23 12:40:23.136215",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,6 +9,7 @@
   "title",
   "column_break_webk",
   "speaker",
+  "naming_series",
   "section_break_eqbp",
   "description"
  ],
@@ -39,15 +41,23 @@
   {
    "fieldname": "section_break_eqbp",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "TALK-.speaker.-.###\nWORKSHOP-.###",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-23 12:43:49.784039",
+ "modified": "2025-07-24 10:53:12.167705",
  "modified_by": "Administrator",
  "module": "Conf Management",
  "name": "Talk",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -64,6 +74,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

@@ -1,0 +1,31 @@
+{
+ "attach_print": 1,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2025-07-23 16:40:49.018222",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Ticket",
+ "enabled": 1,
+ "event": "New",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Hi there!\n\nPFA your ticket.",
+ "message_type": "HTML",
+ "minutes_offset": 0,
+ "modified": "2025-07-23 16:44:18.291790",
+ "modified_by": "Administrator",
+ "module": "Conf Management",
+ "name": "Send Ticket",
+ "owner": "Administrator",
+ "print_format": "Final Ticker Format",
+ "recipients": [
+  {
+   "receiver_by_document_field": "email"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "subject": "Here is your ticket, {{doc.attendee_name}}!"
+}

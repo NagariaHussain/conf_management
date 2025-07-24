@@ -7,6 +7,7 @@
  "field_order": [
   "conference",
   "attendees",
+  "is_paid",
   "section_break_falf",
   "amended_from"
  ],
@@ -38,6 +39,13 @@
    "fieldtype": "Table",
    "label": "Attendees",
    "options": "Conference Attendee"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_paid",
+   "fieldtype": "Check",
+   "label": "Is Paid?"
   }
  ],
  "grid_page_length": 50,
@@ -49,7 +57,7 @@
    "link_fieldname": "registration"
   }
  ],
- "modified": "2025-07-23 15:10:56.615207",
+ "modified": "2025-07-23 16:52:24.542135",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Conference Booking",
