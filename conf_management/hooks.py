@@ -25,8 +25,8 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/conf_management/css/conf_management.css"
-# app_include_js = "/assets/conf_management/js/conf_management.js"
+# app_include_css = "/assets/conf_management/css/home.css"
+# app_include_js = "/assets/conf_management/js/custom.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/conf_management/css/conf_management.css"
@@ -43,7 +43,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Sales Invoice": "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -61,7 +61,7 @@ app_license = "mit"
 
 # website user home page (by Role)
 # role_home_page = {
-# 	"Role": "home_page"
+# 	"Sales Manager": "/app/sales"
 # }
 
 # Generators
@@ -133,33 +133,18 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 	"Sales Invoice": {
+# 		"validate": "conf_management.api.on_update_ticket"
+# 	},
+#     "*": {
+#         "before_insert": "...."
 # 	}
 # }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"conf_management.tasks.all"
-# 	],
-# 	"daily": [
-# 		"conf_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"conf_management.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"conf_management.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"conf_management.tasks.monthly"
-# 	],
-# }
+scheduler_events = {"Cron": {"0 20 * * 3": ["conf_management.tasks.finalise_tickets"]}}
 
 # Testing
 # -------
@@ -231,9 +216,10 @@ app_license = "mit"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
+export_python_type_annotations = True
 
 # default_log_clearing_doctypes = {
-# 	"Logging DocType Name": 30  # days to retain logs
+# 	"Error Log": 30  # days to retain logs
 # }
 
+fixtures = [{"dt": "Ticket Type", "filters": {"is_standard": 1}}]

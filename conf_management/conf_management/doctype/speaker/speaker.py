@@ -10,7 +10,10 @@ class Speaker(Document):
 	# 	self.name = "sdsdd"
 
 	def before_save(self):
-		self.full_name = f"{self.first_name} {self.last_name}"
+		if self.last_name:
+			self.full_name = f"{self.first_name} {self.last_name}"
+		else:
+			self.full_name = self.first_name
 
 	def on_trash(self):
 		frappe.throw("You can't delete this!")

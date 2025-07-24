@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-07-24 11:22:16.419148",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"filters\":[[\"Ticket\",\"qr_code\",\"is\",\"set\",false]],\"fields\":[[\"conference\",\"Ticket\"],[\"_aggregate_column\",\"Ticket\"]],\"order_by\":\"`tabTicket`.tabTicket`.creation desc, `tabTicket`.name desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"conference\":252,\"_aggregate_column\":200},\"group_by\":{\"group_by\":\"`tabTicket`.`conference`\",\"aggregate_function\":\"count\"}}",
+ "letterhead": null,
+ "modified": "2025-07-24 11:22:39.509303",
+ "modified_by": "Administrator",
+ "module": "Ticketing",
+ "name": "Number of Tickets by Conference",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Ticket",
+ "report_name": "Number of Tickets by Conference",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

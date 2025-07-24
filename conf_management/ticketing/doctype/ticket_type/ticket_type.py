@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Talk(Document):
+class TicketType(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,12 +14,7 @@ class Talk(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		description: DF.TextEditor | None
-		naming_series: DF.Literal["TALK-.speaker.-.###", "WORKSHOP-.###"]
-		speaker: DF.Link
-		title: DF.Data
+		description: DF.SmallText | None
 	# end: auto-generated types
 
-	def before_insert(self):
-		# self.speaker
-		pass
+	pass

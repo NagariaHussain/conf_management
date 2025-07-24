@@ -7,6 +7,7 @@
  "field_order": [
   "conference",
   "email",
+  "has_qr",
   "column_break_clyd",
   "attendee_name",
   "registration",
@@ -21,7 +22,8 @@
    "in_list_view": 1,
    "label": "Conference",
    "options": "Conference",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "email",
@@ -60,13 +62,19 @@
    "fieldtype": "Table",
    "label": "Check Ins",
    "options": "Ticket Check In"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_qr",
+   "fieldtype": "Check",
+   "label": "Has QR?"
   }
  ],
  "grid_page_length": 50,
  "image_field": "qr_code",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-23 15:59:13.249410",
+ "modified": "2025-07-24 12:25:36.760958",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Ticket",

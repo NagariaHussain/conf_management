@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "prompt",
  "creation": "2025-07-23 12:40:23.136215",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -53,11 +53,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-24 10:53:12.167705",
+ "modified": "2025-07-24 11:13:19.799298",
  "modified_by": "Administrator",
  "module": "Conf Management",
  "name": "Talk",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Set by user",
  "owner": "Administrator",
  "permissions": [
   {
